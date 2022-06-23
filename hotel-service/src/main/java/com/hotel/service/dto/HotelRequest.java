@@ -15,6 +15,7 @@ import lombok.ToString;
 @EqualsAndHashCode
 public class HotelRequest {
     
+	private Long hotelId;
 	private String hotelName;
 	
 	private String pin;

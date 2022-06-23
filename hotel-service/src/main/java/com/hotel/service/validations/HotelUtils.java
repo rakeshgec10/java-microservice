@@ -21,9 +21,10 @@ public class HotelUtils {
 			}
 			return "Hotel Pin Can Not EMPTY";
 		}
-		if(hh.getDescription()==null &&hh.getDescription().length()>50 ) {
-			return "Hotel not less then 50 word";
-		}
+		/*
+		 * if(hh.getDescription()==null &&hh.getDescription().length()>50 ) { return
+		 * "Hotel not less then 50 word"; }
+		 */
 		return "pass";
 		
 	}

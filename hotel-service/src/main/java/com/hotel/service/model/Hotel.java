@@ -26,9 +26,9 @@ public class Hotel implements Serializable{
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	@Column(name="id")
+	@Column(name="hotelid")
 	@PrimaryKeyJoinColumn
-	private Long hotelid;
+	private Long hotelId;
 	
 	private String hotelName;
 	

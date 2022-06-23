@@ -51,8 +51,8 @@ public class HotelServicesImpl implements HotelServices{
 
 	@Override
 	public List<Hotel> findHotelbyName(String hotelname) {
-		
-		return null;
+		List<Hotel> listH=hotelRepo.findHotelbyName(hotelname);
+		return listH;
 	}
 
 	@Override
