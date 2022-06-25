@@ -1,8 +1,9 @@
-package com.hotel.service.service;
+package com.hotel.service.hotel.service;
 
 import java.util.List;
 
-import com.hotel.service.model.Hotel;
+import com.hotel.service.hotel.model.Hotel;
+
 
 
 public interface HotelServices {

@@ -1,11 +1,8 @@
-package com.hotel.service.controller;
+package com.hotel.service.hotel.controller;
 
 import java.lang.reflect.Type;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
-import org.apache.catalina.mapper.Mapper;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.TypeToken;
 import org.modelmapper.convention.MatchingStrategies;
@@ -20,10 +17,12 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.hotel.service.dto.HotelRequest;
-import com.hotel.service.dto.HotelResponce;
-import com.hotel.service.model.Hotel;
-import com.hotel.service.service.HotelServices;
+import com.hotel.service.hotel.dto.HotelRequest;
+import com.hotel.service.hotel.dto.HotelResponce;
+import com.hotel.service.hotel.model.Hotel;
+import com.hotel.service.hotel.service.HotelServices;
+
+
 
 @RestController
 @RequestMapping("/api/")

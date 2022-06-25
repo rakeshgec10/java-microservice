@@ -1,4 +1,4 @@
-package com.hotel.service.dto;
+package com.hotel.service.location.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
@@ -13,14 +13,16 @@ import lombok.ToString;
 @AllArgsConstructor
 @ToString
 @EqualsAndHashCode
-public class HotelRequest {
-    
-	private Long hotelId;
-	private String hotelName;
+public class LocationResponce {
+	
+	private Long locationid;
+	
+	
+
+	private String countrycode;
+	
 	
 	private String pin;
-	private String imageHotel;
-	
-	private String description;
+	private String statecode;
 
 }

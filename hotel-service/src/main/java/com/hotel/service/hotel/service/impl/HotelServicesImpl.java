@@ -1,12 +1,13 @@
-package com.hotel.service.service;
+package com.hotel.service.hotel.service.impl;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.hotel.service.model.Hotel;
-import com.hotel.service.repository.HotelRepository;
+import com.hotel.service.hotel.model.Hotel;
+import com.hotel.service.hotel.repository.HotelRepository;
+import com.hotel.service.hotel.service.HotelServices;
 import com.hotel.service.validations.HotelUtils;
 
 @Service

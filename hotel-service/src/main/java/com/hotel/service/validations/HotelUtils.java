@@ -2,7 +2,8 @@ package com.hotel.service.validations;
 
 import org.springframework.stereotype.Component;
 
-import com.hotel.service.model.Hotel;
+import com.hotel.service.hotel.model.Hotel;
+
 
 
 

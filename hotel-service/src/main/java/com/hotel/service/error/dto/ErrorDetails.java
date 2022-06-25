@@ -1,4 +1,4 @@
-package com.hotel.service.dto;
+package com.hotel.service.error.dto;
 
 import java.util.Date;
 

@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
+import com.hotel.service.error.dto.ErrorDetails;
+
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
@@ -20,26 +22,26 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
 
     // handle specific exceptions
     @ExceptionHandler(ResourceNotFoundException.class)
-    public ResponseEntity<com.hotel.service.dto.ErrorDetails> handleResourceNotFoundException(ResourceNotFoundException exception,
+    public ResponseEntity<ErrorDetails> handleResourceNotFoundException(ResourceNotFoundException exception,
                                                                         WebRequest webRequest) {
-        com.hotel.service.dto.ErrorDetails errorDetails = new com.hotel.service.dto.ErrorDetails(new Date(), exception.getMessage(),
+        ErrorDetails errorDetails = new ErrorDetails(new Date(), exception.getMessage(),
                 webRequest.getDescription(false));
         return new ResponseEntity<>(errorDetails, HttpStatus.NOT_FOUND);
     }
 
     @ExceptionHandler(HotelAPIException.class)
-    public ResponseEntity<com.hotel.service.dto.ErrorDetails> handleBlogAPIException(HotelAPIException exception,
+    public ResponseEntity<ErrorDetails> handleBlogAPIException(HotelAPIException exception,
                                                                WebRequest webRequest) {
-        com.hotel.service.dto.ErrorDetails errorDetails = new com.hotel.service.dto.ErrorDetails(new Date(), exception.getMessage(),
+        ErrorDetails errorDetails = new ErrorDetails(new Date(), exception.getMessage(),
                 webRequest.getDescription(false));
         return new ResponseEntity<>(errorDetails, HttpStatus.BAD_REQUEST);
     }
 
     // global exceptions
     @ExceptionHandler(Exception.class)
-    public ResponseEntity<com.hotel.service.dto.ErrorDetails> handleGlobalException(Exception exception,
+    public ResponseEntity<ErrorDetails> handleGlobalException(Exception exception,
                                                               WebRequest webRequest) {
-        com.hotel.service.dto.ErrorDetails errorDetails = new com.hotel.service.dto.ErrorDetails(new Date(), exception.getMessage(),
+        ErrorDetails errorDetails = new ErrorDetails(new Date(), exception.getMessage(),
                 webRequest.getDescription(false));
         return new ResponseEntity<>(errorDetails, HttpStatus.INTERNAL_SERVER_ERROR);
     }
