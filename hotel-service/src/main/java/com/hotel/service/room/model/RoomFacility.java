@@ -1,5 +1,7 @@
 package com.hotel.service.room.model;
 
+import java.util.Set;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -8,40 +10,35 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 
-import com.hotel.service.hotel.model.Hotel;
+import com.hotel.service.amenities.model.Amenities;
 
 import lombok.Getter;
 import lombok.Setter;
 
 @Entity
-@Table(name="roominfo")
+@Table(name="roomfacility")
 @Setter
 @Getter
-public class RoomInfo {
-
+public class RoomFacility {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	@Column(name="roomid")
+	@Column(name="roomfacilityid")
 	@PrimaryKeyJoinColumn
-	private Long roomid;
+	private Long roomfacilityid;
 	
-	@ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "hotelid", nullable = false)
-	private Hotel hotelid;
+	 @OneToOne(cascade = CascadeType.ALL)
+	    @JoinColumn(name = "roomid")
+	private RoomInfo roomid;
 	
-	@OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "roomfacilityid")
-	private RoomFacility roomfacilityid;
 	
-	private String roominfo;
-	
-	private String currentprice;
-	
-	private String discount;
+	 @OneToMany(fetch = FetchType.LAZY,
+	            cascade = CascadeType.ALL)
+	private Set<Amenities> amentiesid;
+
 }
